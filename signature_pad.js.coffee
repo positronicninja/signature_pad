@@ -122,8 +122,10 @@ exports.SignaturePad = ((document) ->
     # Pass touch events to canvas element on mobile IE.
     @_canvas.style.msTouchAction = "none"
     @_canvas.addEventListener "touchstart", (event) ->
-      touch = event.changedTouches[0]
-      self._strokeBegin touch
+      touch = undefined
+      if event.targetTouches.length is 1
+        touch = event.changedTouches[0]
+        self._strokeBegin touch
       return
 
     @_canvas.addEventListener "touchmove", (event) ->
