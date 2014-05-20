@@ -132,7 +132,7 @@ exports.SignaturePad = ((document) ->
 
       # Prevent scrolling.
       event.preventDefault()
-      touch = event.changedTouches[0]
+      touch = event.targetTouches[0]
       self._strokeUpdate touch
       return
 
