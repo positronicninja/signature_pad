@@ -17,7 +17,8 @@
 ###
 
 
-SignaturePad = ((document) ->
+exports = this
+exports.SignaturePad = ((document) ->
   "use strict"
   SignaturePad = (canvas, options) ->
     self = this
