@@ -49,6 +49,9 @@ exports.SignaturePad = ((document) ->
     @_reset()
     return
 
+  SignaturePad::toDataURLfrom = (canvas) ->
+    canvas.toDataURL("image/png");
+
   SignaturePad::toDataURL = (imageType, quality) ->
     canvas = @_canvas
     canvas.toDataURL.apply canvas, arguments_
